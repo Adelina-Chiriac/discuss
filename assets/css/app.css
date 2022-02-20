@@ -30,9 +30,10 @@
   display: none;
 }
 .invalid-feedback {
-  color: #a94442;
+  color: red;
   display: block;
-  margin: -1rem 0 2rem;
+  margin-bottom: 0.25em;
+  font-size: 0.9em;
 }
 
 /* LiveView specific classes for your customization */
