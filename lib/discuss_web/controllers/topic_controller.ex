@@ -56,4 +56,14 @@ defmodule DiscussWeb.TopicController do
         render(conn, "edit.html", changeset: changeset, topic: old_topic)
     end
   end
+
+  def delete(conn, params) do
+    %{"id" => topic_id} = params
+    
+    Repo.get!(Topic, topic_id) |> Repo.delete!()
+
+    conn
+    |> put_flash(:info, "Topic deleted!")
+    |>  redirect(to: Routes.topic_path(conn, :index))
+  end
 end
